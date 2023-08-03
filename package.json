@@ -9,10 +9,15 @@
     "author": "Diana Smertina",
     "devDependencies": {
         "@types/node": "^20.4.5",
+        "@types/secure-random": "^1.1.0",
         "@typescript-eslint/eslint-plugin": "^5.60.0",
         "@typescript-eslint/parser": "^5.60.0",
         "eslint": "^8.43.0",
         "prettier": "^2.8.8",
         "typescript": "5.1.6"
+    },
+    "dependencies": {
+        "js-crypto-hmac": "^1.0.4",
+        "secure-random": "^1.1.2"
     }
 }

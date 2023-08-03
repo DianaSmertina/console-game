@@ -6,7 +6,11 @@ var App = /** @class */ (function () {
         this.gameMoves = gameMoves;
         this.gameMoves = gameMoves;
     }
+    App.prototype.chooseCompMove = function () {
+        App.compMove = this.gameMoves[Math.floor(Math.random() * (this.gameMoves.length))]; //may be use random lib for more correct random
+    };
     App.prototype.run = function () {
+        this.chooseCompMove();
         var menu = new menu_1.default(this.gameMoves);
         menu.showMenu();
     };

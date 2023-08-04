@@ -7,9 +7,9 @@ class Protection {
     static key: string;
     static gameHmac: string;
 
-    constructor(private gameMoves: Array<string>) {
-        this.gameMoves = gameMoves;
-    }
+    // constructor(private gameMoves: Array<string>) {
+    //     this.gameMoves = gameMoves;
+    // }
 
     generateKey() {
         Protection.key = secureRandom.randomBuffer(32).toString("hex");

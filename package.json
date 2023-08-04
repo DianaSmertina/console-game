@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "compile": "tsc index.ts",
-        "start": "node index.js rock paper scissors"
+        "start": "node index.js rock paper scissors cucumber apple"
     },
     "author": "Diana Smertina",
     "devDependencies": {
@@ -17,6 +17,7 @@
         "typescript": "5.1.6"
     },
     "dependencies": {
+        "cli-table3": "^0.6.3",
         "js-crypto-hmac": "^1.0.4",
         "secure-random": "^1.1.2"
     }

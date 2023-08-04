@@ -6,9 +6,6 @@ var crypto = require("crypto");
 var Protection = /** @class */ (function () {
     function Protection() {
     }
-    // constructor(private gameMoves: Array<string>) {
-    //     this.gameMoves = gameMoves;
-    // }
     Protection.prototype.generateKey = function () {
         Protection.key = secureRandom.randomBuffer(32).toString("hex");
     };

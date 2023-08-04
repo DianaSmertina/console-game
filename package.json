@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "compile": "tsc index.ts",
-        "start": "node index.js rock paper scissors cucumber apple"
+        "start": "node index.js paper rock scissors"
     },
     "author": "Diana Smertina",
     "devDependencies": {

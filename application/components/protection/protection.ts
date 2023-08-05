@@ -1,5 +1,4 @@
-import App from "../../app";
-
+import Computer from "../players/computer";
 const secureRandom = require("secure-random");
 const crypto = require("crypto");
 
@@ -15,8 +14,9 @@ class Protection {
         this.generateKey();
         Protection.gameHmac = crypto
             .createHmac("sha256", Protection.key)
-            .update(App.compMove)
+            .update(Computer.compMove)
             .digest("hex");
+        console.log(`HMAC: ${Protection.gameHmac}`);
     }
 }
 

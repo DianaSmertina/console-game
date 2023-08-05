@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var app_1 = require("../../app");
+var computer_1 = require("../players/computer");
 var secureRandom = require("secure-random");
 var crypto = require("crypto");
 var Protection = /** @class */ (function () {
@@ -13,8 +13,9 @@ var Protection = /** @class */ (function () {
         this.generateKey();
         Protection.gameHmac = crypto
             .createHmac("sha256", Protection.key)
-            .update(app_1.default.compMove)
+            .update(computer_1.default.compMove)
             .digest("hex");
+        console.log("HMAC: ".concat(Protection.gameHmac));
     };
     return Protection;
 }());

@@ -1,4 +1,8 @@
 import App from "../../app";
+import Menu from "../menu/menu";
+import Computer from "../players/computer";
+import User from "../players/user";
+import Protection from "../protection/protection";
 
 class Rules {
     static winData: string[][];
@@ -6,40 +10,37 @@ class Rules {
     createWinData() {
         const len = App.gameMoves.length;
         const result = [];
-
         for (let i = 0; i < len; i++) {
             const row = [];
-
             for (let j = 0; j < len; j++) {
                 if (i === j) {
                     row.push("Drawn");
-                } else if (j - i > 0 && j - i < len / 2) {
-                    row.push("Win");
-                } else if (j - i > len / 2) {
-                    row.push("Lose");
-                } else if (i - j > 0 && i - j < len / 2) {
+                } else if (j - i > len / 2 || (i - j > 0 && i - j < len / 2)) {
                     row.push("Lose");
                 } else {
                     row.push("Win");
                 }
             }
-
             result.push(row);
         }
-
         Rules.winData = result;
     }
 
     determineWinner() {
-        const userIndex = App.gameMoves.indexOf(App.userMove);
-        const compIndex = App.gameMoves.indexOf(App.compMove);
-        if (Rules.winData[compIndex][userIndex] === "Win") {
+        const result = Rules.winData[App.gameMoves.indexOf(Computer.compMove)][App.gameMoves.indexOf(User.userMove)];
+        if (result === "Win") {
             return "Computer wins!";
-        } else if (Rules.winData[compIndex][userIndex] === "Lose") {
+        } else if (result === "Lose") {
             return "You win!";
         } else {
             return "Friendship wins!";
         }
+    }
+
+    showResult() {
+        const winner = this.determineWinner();
+        console.log(`Your move: ${User.userMove}\nComputer move: ${Computer.compMove}\n${winner}\nHMAC key: ${Protection.key}`);
+        Menu.rl.close();
     }
 }
 

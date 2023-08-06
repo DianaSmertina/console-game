@@ -4,7 +4,11 @@
     "description": "",
     "scripts": {
         "compile": "tsc index.ts",
-        "start": "node index.js paper rock scissors apple cactus"
+        "start3": "node index.js paper rock scissors",
+        "start5": "node index.js paper rock scissors apple cactus",
+        "start7": "node index.js paper rock scissors apple cactus lime orange",
+        "start2": "node index.js paper rock",
+        "start-repeat": "node index.js paper rock paper"
     },
     "author": "Diana Smertina",
     "devDependencies": {

@@ -8,7 +8,8 @@ class App {
 
     checkGameMoves() {
         const args = new Set(process.argv.slice(2));
-        if (args.size >= 3 && args.size % 2 === 1) {
+        const minSize = 3;
+        if (args.size >= minSize && args.size % 2 === 1) {
             App.gameMoves = Array.from(args);
             return true;
         }

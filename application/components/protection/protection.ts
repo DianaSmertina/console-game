@@ -7,7 +7,8 @@ class Protection {
     static gameHmac: string;
 
     generateKey() {
-        Protection.key = secureRandom.randomBuffer(32).toString("hex");
+        const keySize = 32;
+        Protection.key = secureRandom.randomBuffer(keySize).toString("hex");
     }
 
     generateHMAC() {
